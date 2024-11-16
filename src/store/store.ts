@@ -22,11 +22,12 @@ const useHabitStore = create<HabitState>()((set, get) => {
       set(state => {
         return {
           habits: [
+            ...state.habits,
             {
-              id: "1",
-              name: "coding",
-              frequency: "daily",
-              completedDates: [],
+              id: Date.now().toString(),
+              name,
+              frequency,
+              completedDate: [],
               createdAt: new Date().toISOString(),
             },
           ],
